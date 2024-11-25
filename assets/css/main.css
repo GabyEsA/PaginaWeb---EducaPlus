@@ -1884,9 +1884,6 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
 
 .form-container {
   padding: 20px;
@@ -1897,4 +1894,9 @@ section,
 
 #contactoGeneral{
   margin-top: 20px;
+}
+
+#formularioPago{
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
