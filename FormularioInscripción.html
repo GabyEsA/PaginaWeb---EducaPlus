@@ -115,6 +115,17 @@
                   <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
                   <input type="date" class="form-control" id="fechaNacimiento" required>
               </div>
+
+              <h4 class="text-center mt-4 mb-3">Datos del curso</h4>
+              <div class="mb-3">
+                <label for="nombreCurso">Nombre del curso:</label>
+                <input type="text" id="nombreCurso" name="nombreCurso" readonly><br><br>
+              </div>
+              <div class="mb-3">
+                <label for="precioCurso">Precio:</label>
+                <input type="text" id="precioCurso" name="precioCurso" readonly><br><br>
+              </div>
+
               <h4 class="text-center mt-4 mb-3">Datos de Pago</h4>
               <!-- Número de Tarjeta -->
               <div class="mb-3">
@@ -138,7 +149,7 @@
               </div>
               <!-- Botón -->
               <div class="d-grid gap-2">
-                  <button type="submit" class="btn btn-primary">Enviar</button>
+                  <button type="submit" class="btn btn-primary">Pagar</button>
               </div>
           </form>
           <div class="col-md-3">
@@ -207,6 +218,7 @@
     <div id="preloader"></div>
   
     <!-- Vendor JS Files -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
@@ -216,6 +228,24 @@
   
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+    
+    <script>
+      $(document).ready(function () {
+            // Recuperar datos del curso desde LocalStorage
+            const nombreCurso = localStorage.getItem('nombreCurso');
+            const precioCurso = localStorage.getItem('precioCurso');
+
+            // Rellenar los campos automáticamente
+            if (nombreCurso && precioCurso) {
+                $('#nombreCurso').val(nombreCurso);
+                $('#precioCurso').val(precioCurso);
+            } else {
+                // Manejar el caso donde no hay datos
+                alert('No se encontraron datos del curso. Por favor, regresa a la página del curso.');
+                window.location.href = 'index.html'; // Cambia a la página principal
+            }
+        });
+    </script>
   
   </body>
   
