@@ -211,13 +211,10 @@
   
     </footer>
   
-    <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   
-    <!-- Preloader -->
     <div id="preloader"></div>
   
-    <!-- Vendor JS Files -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
@@ -226,33 +223,27 @@
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   
-    <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
     
     <script>
       $(document).ready(function () {
-            // Recuperar datos del curso desde LocalStorage
             const nombreCurso = localStorage.getItem('nombreCurso');
             const precioCurso = localStorage.getItem('precioCurso');
 
-            // Rellenar los campos automáticamente
             if (nombreCurso && precioCurso) {
                 $('#nombreCurso').val(nombreCurso);
                 $('#precioCurso').val(precioCurso);
             } else {
-                // Manejar el caso donde no hay datos
                 alert('No se encontraron datos del curso. Por favor, regresa a la página del curso.');
-                window.location.href = 'index.html'; // Cambia a la página principal
+                window.location.href = 'index.html';
             }
         });
     </script>
 
 <script>
   function handleSubmit(event) {
-      // Evitar que el formulario se envíe de forma predeterminada
       event.preventDefault();
 
-      // Obtener los valores de los campos
       const nombre = document.getElementById('nombre').value;
       const apellidoPaterno = document.getElementById('apellidoPaterno').value;
       const apellidoMaterno = document.getElementById('apellidoMaterno').value;
@@ -264,7 +255,6 @@
       const fechaExpiracion = document.getElementById('fechaExpiracion').value;
       const cvv = document.getElementById('cvv').value;
 
-      // Guardar los datos en localStorage
       localStorage.setItem('nombre', nombre);
       localStorage.setItem('apellidoPaterno', apellidoPaterno);
       localStorage.setItem('apellidoMaterno', apellidoMaterno);
@@ -276,7 +266,6 @@
       localStorage.setItem('fechaExpiracion', fechaExpiracion);
       localStorage.setItem('cvv', cvv);
 
-      // Redirigir a la página de factura
       window.location.href = 'factura.html';
   }
 </script>
