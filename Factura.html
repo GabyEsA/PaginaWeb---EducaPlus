@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Factura</title>
+</head>
+<body>
+    <h1>Factura</h1>
+    <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+    <p><strong>Apellido Paterno:</strong> <span id="apellidoPaterno"></span></p>
+    <p><strong>Apellido Materno:</strong> <span id="apellidoMaterno"></span></p>
+    <p><strong>Fecha de Nacimiento:</strong> <span id="fechaNacimiento"></span></p>
+    <p><strong>Curso:</strong> <span id="nombreCurso"></span></p>
+    <p><strong>Precio del Curso:</strong> <span id="precioCurso"></span></p>
+    <p><strong>Número de Tarjeta:</strong> <span id="numeroTarjeta"></span></p>
+    <p><strong>Nombre en la Tarjeta:</strong> <span id="nombreTarjeta"></span></p>
+    <p><strong>Fecha de Expiración:</strong> <span id="fechaExpiracion"></span></p>
+    <p><strong>CVV:</strong> <span id="cvv"></span></p>
+
+    <script>
+        // Recuperar los datos de localStorage y mostrar en la factura
+        document.getElementById('nombre').textContent = localStorage.getItem('nombre');
+        document.getElementById('apellidoPaterno').textContent = localStorage.getItem('apellidoPaterno');
+        document.getElementById('apellidoMaterno').textContent = localStorage.getItem('apellidoMaterno');
+        document.getElementById('fechaNacimiento').textContent = localStorage.getItem('fechaNacimiento');
+        document.getElementById('nombreCurso').textContent = localStorage.getItem('nombreCurso');
+        document.getElementById('precioCurso').textContent = localStorage.getItem('precioCurso');
+        document.getElementById('numeroTarjeta').textContent = localStorage.getItem('numeroTarjeta');
+        document.getElementById('nombreTarjeta').textContent = localStorage.getItem('nombreTarjeta');
+        document.getElementById('fechaExpiracion').textContent = localStorage.getItem('fechaExpiracion');
+        document.getElementById('cvv').textContent = localStorage.getItem('cvv');
+    </script>
+</body>
+</html>

@@ -94,7 +94,7 @@
         </div>
         <div class="form-container col-md-6" id="formularioPago">
           <h2 class="text-center mb-4">Formulario de Registro</h2>
-          <form>
+          <form onsubmit="handleSubmit(event)">
               <!-- Nombre -->
               <div class="mb-3">
                   <label for="nombre" class="form-label">Nombre</label>
@@ -246,6 +246,40 @@
             }
         });
     </script>
+
+<script>
+  function handleSubmit(event) {
+      // Evitar que el formulario se envíe de forma predeterminada
+      event.preventDefault();
+
+      // Obtener los valores de los campos
+      const nombre = document.getElementById('nombre').value;
+      const apellidoPaterno = document.getElementById('apellidoPaterno').value;
+      const apellidoMaterno = document.getElementById('apellidoMaterno').value;
+      const fechaNacimiento = document.getElementById('fechaNacimiento').value;
+      const nombreCurso = document.getElementById('nombreCurso').value;
+      const precioCurso = document.getElementById('precioCurso').value;
+      const numeroTarjeta = document.getElementById('numeroTarjeta').value;
+      const nombreTarjeta = document.getElementById('nombreTarjeta').value;
+      const fechaExpiracion = document.getElementById('fechaExpiracion').value;
+      const cvv = document.getElementById('cvv').value;
+
+      // Guardar los datos en localStorage
+      localStorage.setItem('nombre', nombre);
+      localStorage.setItem('apellidoPaterno', apellidoPaterno);
+      localStorage.setItem('apellidoMaterno', apellidoMaterno);
+      localStorage.setItem('fechaNacimiento', fechaNacimiento);
+      localStorage.setItem('nombreCurso', nombreCurso);
+      localStorage.setItem('precioCurso', precioCurso);
+      localStorage.setItem('numeroTarjeta', numeroTarjeta);
+      localStorage.setItem('nombreTarjeta', nombreTarjeta);
+      localStorage.setItem('fechaExpiracion', fechaExpiracion);
+      localStorage.setItem('cvv', cvv);
+
+      // Redirigir a la página de factura
+      window.location.href = 'factura.html';
+  }
+</script>
   
   </body>
   
